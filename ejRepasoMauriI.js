@@ -15,27 +15,38 @@ var alumnos = [
     {nombre: "Emilio" , apellido: "Gimenez" , promedio: 8 , aprobado: null},
 ]
 
-var arraySuarez = []
-for (var i = 0; i <alumnos.length; i++){
-    if (alumnos[i].apellido === "Suarez"){
-        arraySuarez.push(alumnos[i])
+function crearArrayApellido (array, string){
+    var arrayApellido = []
+    for (var i = 0; i <array.length; i++){
+        if (array[i].apellido === string){
+            arrayApellido.push(array[i])
+        }
     }
+    return arrayApellido
 }
 
 
-var arrayGimenez = []
-for (var i = 0; i <alumnos.length; i++){
-    if (alumnos[i].apellido === "Gimenez"){
-        arrayGimenez.push(alumnos[i])
-    }
-}
+// var arraySuarez = []
+// for (var i = 0; i <alumnos.length; i++){
+//     if (alumnos[i].apellido === "Suarez"){
+//         arraySuarez.push(alumnos[i])
+//     }
+// }
 
-var arrayPerez = []
-for (var i = 0; i <alumnos.length; i++){
-    if (alumnos[i].apellido === "Perez"){
-        arrayPerez.push(alumnos[i])
-    }
-}
+
+// var arrayGimenez = []
+// for (var i = 0; i <alumnos.length; i++){
+//     if (alumnos[i].apellido === "Gimenez"){
+//         arrayGimenez.push(alumnos[i])
+//     }
+// }
+
+// var arrayPerez = []
+// for (var i = 0; i <alumnos.length; i++){
+//     if (alumnos[i].apellido === "Perez"){
+//         arrayPerez.push(alumnos[i])
+//     }
+// }
 
 function aprobadoTrue(array){
     for (let i = 0; i < array.length; i++) {
@@ -46,6 +57,7 @@ function aprobadoTrue(array){
         }
     }
 }
+
 aprobadoTrue(alumnos)
 
 
@@ -60,6 +72,12 @@ var arrayNombres = []
 for (var i = 0; i <alumnos.length; i++){
     arrayNombres.push(alumnos[i].nombre)
 }
+
+
+var arraySuarez = crearArrayApellido(alumnos, "Suarez")
+var arrayGimenez = crearArrayApellido(alumnos, "Gimenez")
+var arrayPerez = crearArrayApellido(alumnos, "Perez")
+
 
 console.log(arraySuarez)
 console.log(arrayGimenez)
